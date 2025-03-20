@@ -111,16 +111,8 @@ const ActionButtons = ({
   isApplyDisabled,
   filterBarOrientation = FilterBarOrientation.Vertical,
 }: ActionButtonsProps) => {
-  const isClearAllEnabled = useMemo(
-    () =>
-      Object.values(dataMaskApplied).some(
-        filter =>
-          isDefined(dataMaskSelected[filter.id]?.filterState?.value) ||
-          (!dataMaskSelected[filter.id] &&
-            isDefined(filter.filterState?.value)),
-      ),
-    [dataMaskApplied, dataMaskSelected],
-  );
+  const isClearAllEnabled = useMemo(() => false, []);
+
   const isVertical = filterBarOrientation === FilterBarOrientation.Vertical;
 
   return (
@@ -132,6 +124,7 @@ const ActionButtons = ({
       data-test="filterbar-action-buttons"
     >
       <Button
+        disabled={false}
         buttonStyle="primary"
         htmlType="submit"
         className="filter-apply-button"
@@ -141,6 +134,7 @@ const ActionButtons = ({
         {isVertical ? t('Apply filters') : t('Apply')}
       </Button>
       <Button
+        disabled={!isClearAllEnabled}
         buttonStyle="link"
         buttonSize="small"
         className="filter-clear-all-button"
