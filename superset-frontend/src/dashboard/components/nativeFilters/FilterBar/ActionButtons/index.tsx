@@ -22,7 +22,6 @@ import {
   DataMaskState,
   DataMaskStateWithId,
   t,
-  isDefined,
   SupersetTheme,
 } from '@superset-ui/core';
 import Button from 'src/components/Button';
@@ -106,9 +105,6 @@ const ActionButtons = ({
   width = OPEN_FILTER_BAR_WIDTH,
   onApply,
   onClearAll,
-  dataMaskApplied,
-  dataMaskSelected,
-  isApplyDisabled,
   filterBarOrientation = FilterBarOrientation.Vertical,
 }: ActionButtonsProps) => {
   const isClearAllEnabled = useMemo(() => false, []);
