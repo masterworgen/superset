@@ -132,7 +132,6 @@ const ActionButtons = ({
       data-test="filterbar-action-buttons"
     >
       <Button
-        disabled={isApplyDisabled}
         buttonStyle="primary"
         htmlType="submit"
         className="filter-apply-button"
@@ -142,7 +141,6 @@ const ActionButtons = ({
         {isVertical ? t('Apply filters') : t('Apply')}
       </Button>
       <Button
-        disabled={!isClearAllEnabled}
         buttonStyle="link"
         buttonSize="small"
         className="filter-clear-all-button"

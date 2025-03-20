@@ -236,6 +236,8 @@ const FilterBar: FC<FiltersBarProps> = ({
   }, [dashboardId, dataMaskAppliedText, history, updateKey, tabId]);
 
   const handleApply = useCallback(() => {
+    window.parent.postMessage({ type: 'action_button_submit' }, '*');
+
     dispatch(logEvent(LOG_ACTIONS_CHANGE_DASHBOARD_FILTER, {}));
     const filterIds = Object.keys(dataMaskSelected);
     setUpdateKey(1);
