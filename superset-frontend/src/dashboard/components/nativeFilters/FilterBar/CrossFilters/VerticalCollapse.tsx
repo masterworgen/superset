@@ -79,7 +79,7 @@ const CrossFiltersVerticalCollapse = (props: {
         key="crossFilters"
         header={
           <StyledCrossFiltersTitle>
-            {t('Cross-filters')}
+            {t('Доп. фильтры')}
           </StyledCrossFiltersTitle>
         }
       >

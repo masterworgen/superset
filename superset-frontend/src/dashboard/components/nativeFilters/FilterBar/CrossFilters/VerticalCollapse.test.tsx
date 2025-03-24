@@ -53,14 +53,14 @@ test('VerticalCollapse should render', () => {
 
 test('Collapse with title should render', () => {
   setup(mockedProps);
-  expect(screen.getByText('Cross-filters')).toBeInTheDocument();
+  expect(screen.getByText('Доп. фильтры')).toBeInTheDocument();
 });
 
 test('Collapse should not render when empty', () => {
   setup({
     crossFilters: [],
   });
-  expect(screen.queryByText('Cross-filters')).not.toBeInTheDocument();
+  expect(screen.queryByText('Доп. фильтры')).not.toBeInTheDocument();
   expect(screen.queryByText('test')).not.toBeInTheDocument();
   expect(screen.queryByText('test-b')).not.toBeInTheDocument();
   expect(
